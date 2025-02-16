@@ -1,0 +1,62 @@
+<div role="div" on="tap:thumb.hide" id="grid-demo" class="grid-demo">
+    @{{#hasVideoCover}}
+    <div class="background-vid">
+        <video autoplay loop class="fullscreen" layout="fill" media="(min-width: 768px)"
+            poster="@{{inspiration.desktopThumb}}&h=550&w=1120&fit=crop&crop=focalpoint" id="grid-1-video">
+            <source type="video/mp4" src="@{{hls}}" />
+            <source type="video/mp4" src="@{{hlsFallback}}" />
+        </video>
+
+        <video autoplay loop class="fullscreen grid-demo -video" width="50" height="415" media="(max-width: 767px)"
+            poster="@{{inspiration.desktopThumb}}&h=550&w=1120&fit=crop&crop=focalpoint" id="grid-video">
+            <source type="video/mp4" src="@{{hls}}" />
+            <source type="video/mp4" src="@{{hlsFallback}}" />
+        </video>
+
+
+    </div>
+    @{{/hasVideoCover}}
+
+    @{{^hasVideoCover}}
+    <img class="contain" layout="fill" src="@{{inspiration.desktop}}&h=550&w=1120&fit=crop&crop=focalpoint">
+    </img>
+    @{{/hasVideoCover}}
+    <a class="overlay-a" href=''></a>
+    <!-- Content overlay-->
+    <div class="content-overlay">
+        <div class="h3">
+            <h3>
+                @{{location.name}}
+            </h3>
+
+            <!-- category -->
+            <div class="category-flex">
+                <div>
+                    <img media="(max-width: 649px)" id="social-logo" alt="@{{category.name}}" width="14" height="14"
+                        src="@{{category.icon}}&fit=crop&crop=focalpoint&w=30&h=30"></img>
+                    <img media="(min-width: 650px)" id="social-logo" alt="@{{category.name}}" width="27" height="27"
+                        src="@{{category.icon}}&fit=crop&crop=focalpoint&w=30&h=30"></img>
+                    <p>@{{category.name}} in @{{locationDisplayName}}</p>
+                </div>
+            </div>
+            <!-- End category -->
+        </div>
+
+
+        <!-- process influencer meta-->
+        //
+        <!-- process influencer meta-->
+
+        <a class="book" href=''>Amsterdam Bus Tour</a>
+        <div class="share-flex" style="position: absolute;">
+            <div hidden class="dropup-content" id="@{{title}}">
+                <div class="wrapper">
+                    <!--share-->
+                </div>
+            </div>
+            <div class="like-and-share">
+                <!--like heart-->
+            </div>
+        </div>
+    </div>
+</div>
